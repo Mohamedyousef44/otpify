@@ -37,7 +37,8 @@ class DatabaseRepository implements OtpRepositoryInterface
      */
     public function getRecord(string $key): ?array
     {
-        return Model::where('identifier', $key)->first();
+        $record =  Model::where('identifier', $key)->first(['id', 'expires_at', 'attempts', 'otp_hash']);
+        return $record ? $record->toArray() : null;
     }
 
     /**
