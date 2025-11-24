@@ -28,7 +28,10 @@
         "laravel": {
             "providers": [
                 "Yossivic\\Otp\\OtpServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Otp": "Yossivic\\Otp\\Facades\\Otp"
+            }
         }
     },
     "minimum-stability": "stable",
